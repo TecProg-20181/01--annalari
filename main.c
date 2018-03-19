@@ -126,13 +126,17 @@ Image cortar_imagem(Image img, int x, int y, int w, int h) {
     return cortada;
 }
 
+// read type of image
+void read_type_of_image(){
+    char p3[4];
+    scanf("%s", p3);
+}
+    
 
 int main() {
     Image img;
 
-    // read type of image
-    char p3[4];
-    scanf("%s", p3);
+    read_type_of_image();
 
     // read width height and color of image
     int max_color;
