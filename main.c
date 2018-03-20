@@ -158,6 +158,18 @@ void print_width_height_color(){
     printf("%u %u\n255\n", img.w, img.h);
 }
 
+void print_pixels(){
+    for (unsigned int i = 0; i < img.h; ++i) {
+        for (unsigned int j = 0; j < img.w; ++j) {
+            printf("%hu %hu %hu ", img.pixel[i][j][0],
+                                   img.pixel[i][j][1],
+                                   img.pixel[i][j][2]);
+
+        }
+        printf("\n");
+    }
+}
+
 int main() {
 
     read_type_of_image();
@@ -270,15 +282,6 @@ int main() {
 
     print_width_height_color();
 
-    // print pixels of image
-    for (unsigned int i = 0; i < img.h; ++i) {
-        for (unsigned int j = 0; j < img.w; ++j) {
-            printf("%hu %hu %hu ", img.pixel[i][j][0],
-                                   img.pixel[i][j][1],
-                                   img.pixel[i][j][2]);
-
-        }
-        printf("\n");
-    }
+    print_pixels();
     return 0;
 }
