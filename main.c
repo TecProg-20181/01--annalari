@@ -131,16 +131,19 @@ void read_type_of_image(){
     char p3[4];
     scanf("%s", p3);
 }
-    
+
+// read width height and color of image
+Image img;
+void read_width_height_color(){
+    int max_color;
+    scanf("%u %u %d", &img.w, &img.h, &max_color);
+}
 
 int main() {
-    Image img;
 
     read_type_of_image();
 
-    // read width height and color of image
-    int max_color;
-    scanf("%u %u %d", &img.w, &img.h, &max_color);
+    read_width_height_color();
 
     // read all pixels of image
     for (unsigned int i = 0; i < img.h; ++i) {
