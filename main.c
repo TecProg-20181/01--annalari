@@ -139,13 +139,7 @@ void read_width_height_color(){
     scanf("%u %u %d", &img.w, &img.h, &max_color);
 }
 
-int main() {
-
-    read_type_of_image();
-
-    read_width_height_color();
-
-    // read all pixels of image
+void read_pixels(){
     for (unsigned int i = 0; i < img.h; ++i) {
         for (unsigned int j = 0; j < img.w; ++j) {
             scanf("%hu %hu %hu", &img.pixel[i][j][0],
@@ -154,6 +148,15 @@ int main() {
 
         }
     }
+}
+
+int main() {
+
+    read_type_of_image();
+
+    read_width_height_color();
+
+    read_pixels();
 
     int n_opcoes;
     scanf("%d", &n_opcoes);
