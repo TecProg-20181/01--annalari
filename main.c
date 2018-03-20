@@ -154,6 +154,10 @@ void print_type_of_image(){
     printf("P3\n");
 }
 
+void print_width_height_color(){
+    printf("%u %u\n255\n", img.w, img.h);
+}
+
 int main() {
 
     read_type_of_image();
@@ -264,8 +268,7 @@ int main() {
 
     print_type_of_image();
 
-    // print width height and color of image
-    printf("%u %u\n255\n", img.w, img.h);
+    print_width_height_color();
 
     // print pixels of image
     for (unsigned int i = 0; i < img.h; ++i) {
