@@ -98,15 +98,18 @@ Image rotacionar90direita(Image img) {
     return rotacionada;
 }
 
-void inverter_cores(unsigned short int pixel[512][512][3],
-                    unsigned int width, unsigned int height) {
-    for (unsigned int i = 0; i < height; ++i) {
-        for (unsigned int j = 0; j < width; ++j) {
-            pixel[i][j][0] = 255 - pixel[i][j][0];
-            pixel[i][j][1] = 255 - pixel[i][j][1];
-            pixel[i][j][2] = 255 - pixel[i][j][2];
+Image inverter_cores(Image img) {
+Image invertida = img;
+
+    for (unsigned int i = 0; i < invertida.height; ++i) {
+        for (unsigned int j = 0; j < invertida.width; ++j) {
+            invertida.pixel[i][j][0] = 255 - invertida.pixel[i][j][0];
+            invertida.pixel[i][j][1] = 255 - invertida.pixel[i][j][1];
+            invertida.pixel[i][j][2] = 255 - invertida.pixel[i][j][2];
         }
     }
+
+    return invertida;
 }
 
 Image cortar_imagem(Image img, int x, int y, int width, int height) {
@@ -262,7 +265,7 @@ int main() {
                 break;
             }
             case 6: { // Inversao de Cores
-                inverter_cores(img.pixel, img.width, img.height);
+                inverter_cores(img);
                 break;
             }
             case 7: { // Cortar Imagem
